@@ -7,6 +7,7 @@ import 'package:menshop/splash/splash.dart';
 import 'package:menshop/nav_bar/products/product_cubit.dart';
 import 'package:menshop/nav_bar/categories/category_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menshop/nav_bar/cart_d/cart_cubit.dart';
 import 'login/cubit.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (_) => CategoryCubit()..getCategoryProducts()),
             BlocProvider(create: (_) => LoginCubit()..login()),
             BlocProvider(create: (_) => SignUpCubit()..signUp()),
+            BlocProvider(create: (_) => CartCubit()..addToCart()),
 
 
           ],
