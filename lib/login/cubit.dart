@@ -33,7 +33,7 @@ class LoginCubit extends Cubit<LoginStates> {
       if (response.statusCode == 200 || response.statusCode == 201) {
         final data = response.data;
         if (data != null && data is Map<String, dynamic>) {
-          emit(LoginSuccess(data as String));
+          emit(LoginSuccess(data));
         } else {
           emit(LoginFailure("Invalid response format from server"));
         }
